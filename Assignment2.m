@@ -1,4 +1,4 @@
-theta = 0:0.01:2*pi;
+theta = 0:0.01:1*pi;
 figure(1);
 
 for c=[0.15, 0.35, 0.5, 0.75, 1.0, 1.2, 1.5, 2.0, 4.0, 8.0, 16.0]
@@ -29,7 +29,7 @@ hold off;
 figure(4);
 
 for c=[0.15, 0.35, 0.5, 0.75, 1.0, 1.2, 1.5, 2.0, 4.0, 8.0, 16.0]
-    polarplot(theta,explfp(c,theta), 'LineWidth', 5);
+    polarplot(theta,explfp(c,theta));
     hold on;
 end
 title('Explicit Lax-Friedrichs Scheme - Phase Factor')
@@ -38,7 +38,7 @@ hold off;
 figure(5);
 
 for c=[0.15, 0.35, 0.5, 0.75, 1.0, 1.2, 1.5, 2.0, 4.0, 8.0, 16.0]
-    polarplot(theta,implfp(c,theta), 'LineWidth', 5);
+    polarplot(theta,implfp(c,theta));
     hold on;
 end
 title('Implicit Lax-Friedrichs Scheme - Phase Factor')
@@ -47,7 +47,7 @@ hold off;
 
 
 function val=ftbsa(c,theta)
-         val = atan(-c*sin(theta)./(1-c+c*cos(theta)))./(-theta*c);
+         val = atan2(-c*sin(theta), (1-c+c*cos(theta)))./(-theta*c);
 end
 
 function val = explfa(c, theta)
@@ -59,11 +59,11 @@ function val = implfa(c, theta)
 end
 
 function val = explfp(c, theta)
-        val = atan(-c*tan(theta))./(-theta*c);
+        val = atan2(-c*tan(theta), 1)./(-theta*c);
 end
 
 function val = implfp(c, theta)
-        val = atan(-c*sin(theta))./(-theta*c)
+        val = atan2(-c*sin(theta), 1)./(-theta*c)
 end
 
 
