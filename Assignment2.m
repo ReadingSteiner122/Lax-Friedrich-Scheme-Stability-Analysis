@@ -1,48 +1,48 @@
 theta = 0:0.01:2*pi;
 figure(1);
 
-for c=[0.15, 0.35, 0.5, 0.75, 1.0, 1.2, 1.5]
+for c=[0.15, 0.35, 0.5, 0.75, 1.0, 1.2, 1.5, 2.0, 4.0, 8.0, 16.0]
     polarplot(theta,ftbsa(c,theta));
     hold on;
 end
 title('FTBS Scheme - Amplitude Factor');
-legend('cfl=0.15', 'cfl=0.35', 'cfl=0.5', 'cfl=0.75', 'cfl=1.0', 'cfl=1.2', 'cfl=1.5')
+legend('cfl=0.15', 'cfl=0.35', 'cfl=0.5', 'cfl=0.75', 'cfl=1.0', 'cfl=1.2', 'cfl=1.5', 'cfl=2.0', 'cfl=4.0', 'cfl=8.0', 'cfl=16.0')
 hold off;
 figure(2);
 
-for c=[0.15, 0.35, 0.5, 0.75, 1.0, 1.2, 1.5]
+for c=[0.15, 0.35, 0.5, 0.75, 1.0, 1.2, 1.5, 2.0, 4.0, 8.0, 16.0]
     polarplot(theta,explfa(c,theta));
     hold on;
 end
 title('Explicit Lax-Friedrichs Scheme - Amplitude Factor')
-legend('cfl=0.15', 'cfl=0.35', 'cfl=0.5', 'cfl=0.75', 'cfl=1.0', 'cfl=1.2', 'cfl=1.5')
+legend('cfl=0.15', 'cfl=0.35', 'cfl=0.5', 'cfl=0.75', 'cfl=1.0', 'cfl=1.2', 'cfl=1.5', 'cfl=2.0', 'cfl=4.0', 'cfl=8.0', 'cfl=16.0')
 hold off;
 figure(3);
 
-for c=[0.15, 0.35, 0.5, 0.75, 1.0, 1.2, 1.5]
+for c=[0.15, 0.35, 0.5, 0.75, 1.0, 1.2, 1.5, 2.0, 4.0, 8.0, 16.0]
     polarplot(theta,implfa(c,theta));
     hold on;
 end
 title('Implicit Lax-Friedrichs Scheme - Amplitude Factor')
-legend('cfl=0.15', 'cfl=0.35', 'cfl=0.5', 'cfl=0.75', 'cfl=1.0', 'cfl=1.2', 'cfl=1.5')
+legend('cfl=0.15', 'cfl=0.35', 'cfl=0.5', 'cfl=0.75', 'cfl=1.0', 'cfl=1.2', 'cfl=1.5', 'cfl=2.0', 'cfl=4.0', 'cfl=8.0', 'cfl=16.0')
 hold off;
 figure(4);
 
-for c=[0.15, 0.35, 0.5, 0.75, 1.0, 1.2, 1.5]
-    polarplot(theta,explfp(c,theta));
+for c=[0.15, 0.35, 0.5, 0.75, 1.0, 1.2, 1.5, 2.0, 4.0, 8.0, 16.0]
+    polarplot(theta,explfp(c,theta), 'LineWidth', 5);
     hold on;
 end
 title('Explicit Lax-Friedrichs Scheme - Phase Factor')
-legend('cfl=0.15', 'cfl=0.35', 'cfl=0.5', 'cfl=0.75', 'cfl=1.0', 'cfl=1.2', 'cfl=1.5')
+legend('cfl=0.15', 'cfl=0.35', 'cfl=0.5', 'cfl=0.75', 'cfl=1.0', 'cfl=1.2', 'cfl=1.5', 'cfl=2.0', 'cfl=4.0', 'cfl=8.0', 'cfl=16.0')
 hold off;
 figure(5);
 
-for c=[0.15, 0.35, 0.5, 0.75, 1.0, 1.2, 1.5]
-    polarplot(theta,implfp(c,theta));
+for c=[0.15, 0.35, 0.5, 0.75, 1.0, 1.2, 1.5, 2.0, 4.0, 8.0, 16.0]
+    polarplot(theta,implfp(c,theta), 'LineWidth', 5);
     hold on;
 end
 title('Implicit Lax-Friedrichs Scheme - Phase Factor')
-legend('cfl=0.15', 'cfl=0.35', 'cfl=0.5', 'cfl=0.75', 'cfl=1.0', 'cfl=1.2', 'cfl=1.5')
+legend('cfl=0.15', 'cfl=0.35', 'cfl=0.5', 'cfl=0.75', 'cfl=1.0', 'cfl=1.2', 'cfl=1.5', 'cfl=2.0', 'cfl=4.0', 'cfl=8.0', 'cfl=16.0')
 hold off;
 
 
